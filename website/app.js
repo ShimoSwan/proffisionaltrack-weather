@@ -1,5 +1,6 @@
 /* Global Variables */
 const zipeCode = document.getElementById("zip").value;
+const content = document.getElementById("feelings").value;
 
 // Personal API Key for OpenWeatherMap API
 let mainUrl = " api.openweathermap.org/data/2.5/weather?zip=";
