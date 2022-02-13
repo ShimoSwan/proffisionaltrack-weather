@@ -21,6 +21,9 @@ app.use(express.static("website"));
 
 // Setup Server
 const port = 8080;
-app.listen(port, () => {
+app.listen(port, (err) => {
+  if (err) {
+    console.log(`Error:${err}`);
+  }
   console.log(`The server runing on localpost:${port} `);
 });
