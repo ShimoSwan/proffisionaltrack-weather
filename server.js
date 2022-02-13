@@ -27,3 +27,11 @@ app.listen(port, (err) => {
   }
   console.log(`The server runing on localpost:${port} `);
 });
+
+// Callback function to complete GET '/all'
+
+app.get("/all", (req, res) => {
+  res.send(projectData);
+  console.log(projectData);
+});
+// Post Route
