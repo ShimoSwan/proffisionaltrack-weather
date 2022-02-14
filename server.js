@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = [];
 
 // Require Express to run server and routes
 const express = require("express");
@@ -25,13 +25,26 @@ app.listen(port, (err) => {
   if (err) {
     console.log(`Error:${err}`);
   }
-  console.log(`The server runing on localpost:${port} `);
+  console.log(`The server runing on localhost:${port} `);
 });
 
 // Callback function to complete GET '/all'
 
-app.get("/all", (req, res) => {
-  res.send(projectData);
+app.get("/getInformation", (req, res) => {
+  res.send(projectData[projectData.length - 1]);
   console.log(projectData);
 });
 // Post Route
+app.post("/addInformation", (req, res) => {
+  console.log("req.body", req.body);
+  newInformation = {
+    date: req.body.date,
+    temp: req.body.temp,
+    feelings: req.body.feelings,
+  };
+
+  projectData.push(newInformation);
+
+  console.log(projectData);
+  res.json(projectData);
+});
