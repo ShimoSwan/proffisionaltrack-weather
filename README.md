@@ -41,6 +41,7 @@ This project get user data and uses Web API to get weather info and updated the 
 
 - Download the code
 - Execute `npm install` to install project dependencies
+- Add your openweather API key in `website/config.js` file
 - Run the server `npm start`
 - Open your broswer and open `http://localhost:8080`
 - Add required data then click generate
